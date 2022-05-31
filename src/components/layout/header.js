@@ -21,7 +21,7 @@ const AllPrM = function({props,AllProgram}){
   console.log(props);
   return(<Menu as="div" className="relative inline-block text-left" key={props.name}>
   <div>
-    <Menu.Button className="inline-flex justify-center w-full rounded-md shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
+    <Menu.Button className="inline-flex justify-center w-full rounded-md shadow-sm px-4 py-2 bg-gray-100 text-sm font-medium text-gray-800 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
     {props.name}
       <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
     </Menu.Button>
@@ -36,7 +36,7 @@ const AllPrM = function({props,AllProgram}){
     leaveFrom="transform opacity-100 scale-100"
     leaveTo="transform opacity-0 scale-95"
   >
-    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
       <div className="py-1">
         {AllProgram.map((item, index) => {
           return (<Menu.Item key = {index}>
@@ -44,8 +44,8 @@ const AllPrM = function({props,AllProgram}){
               <p
                 href={item.route}
                 className={classNames(
-                  active ? 'bg-gray-100 text-gray-900' : 'text-white',
-                  'flex px-24 py-2 text-sm text-gray-600'
+                  active ? 'bg-gray-800 text-gray-100' : 'text-gray-800',
+                  'flex px-24 py-2 text-sm '
                 )}
               >
                 {item.name}
@@ -64,7 +64,7 @@ const AllPr = function({props,AllProgram}){
   console.log(props);
   return(<Menu as="div" className="relative inline-block text-left" key={props.name}>
   <div>
-    <Menu.Button className="inline-flex justify-center w-full rounded-md shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
+    <Menu.Button className="inline-flex justify-center w-full rounded-md shadow-sm px-4 py-2 bg-gray-100 text-sm font-medium text-gray-800 hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500">
     {props.name}
       <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
     </Menu.Button>
@@ -79,7 +79,7 @@ const AllPr = function({props,AllProgram}){
     leaveFrom="transform opacity-100 scale-100"
     leaveTo="transform opacity-0 scale-95"
   >
-    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-800 ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+    <Menu.Items className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
       <div className="py-1">
         {AllProgram.map((item, index) => {
           return (<Menu.Item key = {index}>
@@ -87,7 +87,7 @@ const AllPr = function({props,AllProgram}){
               <p
                 href={item.route}
                 className={classNames(
-                  active ? 'bg-gray-100 text-gray-900' : 'text-white',
+                  active ? 'bg-gray-800 text-gray-100' : 'text-gray-800',
                   'flex px-4 py-2 text-sm'
                 )}
               >
@@ -104,14 +104,14 @@ const AllPr = function({props,AllProgram}){
 export default function Header() {
   const [logidin, setlogedin] = useState(false);
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-gray-100">
       {({ open }) => (
         <>
           <div className=" mx-auto px-2 sm:px-6 lg:px-8">
             <div className="relative flex items-center justify-between h-16">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -144,7 +144,7 @@ export default function Header() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                          item.current ? 'bg-gray-900 text-white' : 'text-gray-800 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -154,7 +154,7 @@ export default function Header() {
                     ))}
                   </div>
                 </div>
-                {logidin ? <></> : <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 hidden md:block">Login / SignUp</button>}
+                {logidin ? <></> : <button type="button" className="text-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 hidden md:block">Login / SignUp</button>}
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
@@ -234,7 +234,7 @@ export default function Header() {
                   as="a"
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                    item.current ? 'bg-gray-900 text-white' : 'text-gray-800 hover:bg-gray-700 hover:text-white',
                     'block px-3 py-2 rounded-md text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
@@ -242,7 +242,7 @@ export default function Header() {
                   {item.name}
                 </Disclosure.Button>
               ))}
-              {logidin ? <></> : <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login / SignUp</button>}
+              {logidin ? <></> : <button type="button" className="text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Login / SignUp</button>}
             </div>
           </Disclosure.Panel>
         </>
