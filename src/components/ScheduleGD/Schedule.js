@@ -22,7 +22,7 @@ Duration : 45 minutes
           </div>
           <div class="mb-12 lg:mb-0">
             <img
-              src="https://mdbootstrap.com/img/new/ecommerce/vertical/028.jpg"
+              src="schedule.jpg"
               class="w-full rounded-lg shadow-lg"
               alt=""
             />

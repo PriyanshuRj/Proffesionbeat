@@ -1,0 +1,66 @@
+
+
+body{
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif; 
+    text-transform: uppercase;
+  }
+  
+  .box {
+      z-index: 100;
+    position: fixed;
+    text-align: center;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 165px;
+    height: 250px;
+    width: 10px;
+  } 
+  
+  .box a {
+    text-decoration: none;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 2;
+    font-size: 16px;
+  }
+  
+  .box p {
+    color: #fff;
+    position: relative;
+    left: -10px;
+  }
+  
+  .box p i {
+    position: relative;
+    left: 30px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 24px;
+  }
+  .box-icon{
+    position: relative;
+    left: 34px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 24px;
+  }
+  .single-box {
+    margin-left: -200px;
+    width: 230px;
+    padding: 0;
+    display: inline-table;
+
+    transition: margin-left .5s;
+    cursor: pointer;
+    border-radius: 0 50px 50px 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .single-box:hover {
+    margin-left: -30px;
+  }
