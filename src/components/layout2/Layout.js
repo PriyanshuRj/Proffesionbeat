@@ -5,7 +5,7 @@ export default function Layout(props) {
   return (
     <div>
               <Navbar curLocation={props.curLocation} />
-      <div className="max-w-7xl mx-auto md:px-6 lg:px-8 text-white">
+      <div className="">
         {props.children}
       </div>
       <Footer />

@@ -1,11 +1,25 @@
 import Layout from './components/layout/Layout';
 import * as React from "react";
 import "./App.css";
+import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
+import Schedule from './components/ScheduleGD/Schedule';
+import Hero from "./components/hero";
 function App(){
     return (
       <div className="App">
        <Layout >
-hello
+       <Router>
+           <div className="App">
+           <Routes>
+                 <Route exact path='/schedule' element={< Schedule />}></Route>
+                 {/* <Route exact path='/signup' element={< Signup />}></Route>
+                 <Route exact path='/otp' element={< Otp />}></Route>
+                 <Route exact path='/success' element={< Success />}></Route> */}
+                 <Route exact path='/' element={< Hero />}></Route>
+          </Routes>
+          </div>
+       </Router>
+
        </Layout>
     </div>
   );
