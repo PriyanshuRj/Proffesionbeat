@@ -8,22 +8,7 @@ export default function Footer() {
                 <div className="flex md:justify-between">
                    
                     <div className="flex justify-between" style={{width: '100%',flexWrap:'wrap'}}>
-                        <div className="mx-4 my-4">
-                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-gray-800">Resources</h2>
-                            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" / >
-                            <ul className="text-gray-600 dark:text-gray-400">
-                                <li className="mb-4">
-                                    <a href="/" className="hover:underline">About Us</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/" className="hover:underline">Contact Us</a>
-                                </li>
-                                <li>
-                                    <a href="/" className="hover:underline">Pricing</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="mx-4 my-4">
+                    <div className="mx-4 my-4">
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-gray-800">Find Us</h2>
                             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" / >
                             <ul className="text-gray-600 dark:text-gray-400 ">
@@ -37,6 +22,22 @@ export default function Footer() {
                                 </li>
                             </ul>
                         </div>
+                        <div className="mx-4 my-4">
+                            <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-gray-800">Important Links</h2>
+                            <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" / >
+                            <ul className="text-gray-600 dark:text-gray-400">
+                                <li className="mb-4">
+                                    <a href="/" className="hover:underline">About Us</a>
+                                </li>
+                                <li className="mb-4">
+                                    <a href="/" className="hover:underline">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="/" className="hover:underline">Pricing</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
                         <div className="mx-4 my-4">
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-gray-800">Legal</h2>
                             <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" / >
@@ -74,7 +75,7 @@ export default function Footer() {
                             </a>
                         </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" / >
-                    <div className="sm:flex sm:items-center sm:justify-between">
+                    <div className="sm:flex sm:items-center sm:justify-center">
                         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="/" className="hover:underline">Professionbeat™</a>. All Rights Reserved.
                         </span>
                         

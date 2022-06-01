@@ -7,7 +7,7 @@ export default function Layout(props) {
     <div>
               <Navbar curLocation={props.curLocation} />
       <div className="">
-        <MediaIcons />
+        {/* <MediaIcons /> */}
         {props.children}
       </div>
       <Footer />
