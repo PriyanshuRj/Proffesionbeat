@@ -11,7 +11,7 @@ const navigation = [
   { name: 'Support', href: '/', current: false },
 ]
 const AllProgram = [{ name: "first", route: "/" }, { name: "second", route: "/" }, { name: "third", route: "/" }];
-const LearnMore = [{ name: "About", route: "/" }, { name: "Career", route: "/" }, { name: "Contact", route: "/" }];
+const LearnMore = [{ name: "About", route: "/about" }, { name: "Career", route: "/" }, { name: "Contact", route: "/" }];
 function classNames(...classes) {
 
   return classes.filter(Boolean).join(' ')
@@ -41,7 +41,7 @@ const AllPrM = function({props,AllProgram}){
         {AllProgram.map((item, index) => {
           return (<Menu.Item key = {index}>
             {({ active }) => (
-              <p
+              <a
                 href={item.route}
                 className={classNames(
                   active ? 'bg-gray-800 text-gray-100' : 'text-gray-800',
@@ -49,7 +49,7 @@ const AllPrM = function({props,AllProgram}){
                 )}
               >
                 {item.name}
-              </p>
+              </a>
             )}
           </Menu.Item>)
         })}
@@ -84,7 +84,7 @@ const AllPr = function({props,AllProgram}){
         {AllProgram.map((item, index) => {
           return (<Menu.Item key = {index}>
             {({ active }) => (
-              <p
+              <a
                 href={item.route}
                 className={classNames(
                   active ? 'bg-gray-800 text-gray-100' : 'text-gray-800',
@@ -92,7 +92,7 @@ const AllPr = function({props,AllProgram}){
                 )}
               >
                 {item.name}
-              </p>
+              </a>
             )}
           </Menu.Item>)
         })}

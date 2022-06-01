@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Schedule from './components/ScheduleGD/Schedule';
 import Home from "./components/home/index";
+import About from "./components/About/about";
 function App(){
     return (
       <div className="App">
@@ -12,6 +13,7 @@ function App(){
            <div className="App">
            <Routes>
                  <Route exact path='/schedules' element={< Schedule />}></Route>
+                 <Route exact path='/about' element={< About />}></Route>
                  {/* <Route exact path='/signup' element={< Signup />}></Route>
                  <Route exact path='/otp' element={< Otp />}></Route>
                  <Route exact path='/success' element={< Success />}></Route> */}
