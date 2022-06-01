@@ -9,7 +9,7 @@ body{
     /* text-transform: uppercase; */
   }
   
-  .box {
+.box {
       z-index: 100;
     position: fixed;
     text-align: center;
@@ -20,7 +20,7 @@ body{
     width: 10px;
   } 
   
-  .box a {
+.box a {
     text-decoration: none;
     vertical-align: middle;
     text-align: center;
@@ -28,7 +28,7 @@ body{
     font-size: 16px;
   }
   
-  .box p {
+.box p {
     color: #fff;
     position: relative;
     left: -10px;
