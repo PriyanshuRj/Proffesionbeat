@@ -5,15 +5,19 @@ import { BrowserRouter as Router,Routes, Route, Link } from 'react-router-dom';
 import Schedule from './components/ScheduleGD/Schedule';
 import Home from "./components/home/index";
 import About from "./components/About/about";
+import Login from "./components/auth/login";
+import Signup from "./components/auth/signup";
 function App(){
     return (
       <div className="App">
        <Layout >
        <Router>
-           <div className="App">
+           <div className="App bg-gray-50">
            <Routes>
-                 <Route exact path='/schedules' element={< Schedule />}></Route>
+                 <Route exact path='/schedule' element={< Schedule />}></Route>
                  <Route exact path='/about' element={< About />}></Route>
+                 <Route exact path='/login' element={< Login />}></Route>
+                 <Route exact path='/signup' element={< Signup />}></Route>
                  {/* <Route exact path='/signup' element={< Signup />}></Route>
                  <Route exact path='/otp' element={< Otp />}></Route>
                  <Route exact path='/success' element={< Success />}></Route> */}

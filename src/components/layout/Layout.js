@@ -6,7 +6,7 @@ export default function Layout(props) {
   return (
     <div>
               <Navbar curLocation={props.curLocation} />
-      <div className="">
+      <div className="bg-gray-50">
         {/* <MediaIcons /> */}
         {props.children}
       </div>

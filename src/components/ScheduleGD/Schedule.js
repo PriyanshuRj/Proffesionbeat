@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Schedule() {
   return (
-    <div> <section class="mb-20">
+    <div> <section class="">
     <div class="px-6 py-12 md:px-12 bg-gray-50 text-gray-800 text-center lg:text-left">
       <div class="container mx-auto xl:px-8">
         <div class="grid lg:grid-cols-2 gap-12 flex items-center">
@@ -16,7 +16,7 @@ Theme of the week : Union budget 2022-23 15 - 21 February
 Duration : 45 minutes
               </p>
             <a class="inline-block px-7 py-3 mr-2 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Book Your Slot</a>
-            <a class="inline-block px-7 py-3 bg-transparent text-blue-600 font-medium text-sm leading-snug uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Join Group Discussion</a>
+            <a class="inline-block px-7 py-3 bg-transparent text-blue-600 font-medium text-sm leading-snug uppercase rounded hover:text-blue-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out bg-gray-200" data-mdb-ripple="true" data-mdb-ripple-color="light" href="#!" role="button">Join Group Discussion</a>
             <p className="text-base text-gray-500 sm:mt-4 sm:text-lg sm:max-w-xl sm:mx-auto  md:text-xl lg:mx-0">(Link will be activated prior 10 minutes of GD)
             </p><p className="text-base text-gray-500 sm:text-lg sm:max-w-xl sm:mx-auto  md:text-lg lg:mx-0 mb-4">Registration Deadline : 30 min before the schedule time </p>
           </div>
