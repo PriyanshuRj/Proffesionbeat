@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom';
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+const qs = require('qs');
+const API = "http://localhost:8000/signup";
+
 export default function Signup() {
-    const [emailValidator, validate] = useState(null);
+  const navigate = useNavigate();
+  const [emailValidator, validate] = useState(null);
   const [nameValidator, validatename] = useState(null);
   const [passwordValidator, validatepassword] = useState(null);
   const [mobileValidator, validatemobile] = useState(null);
@@ -72,22 +78,73 @@ export default function Signup() {
 
     }
   }
+  const submitform = async (e) => {
+    e.preventDefault();
+    console.log("here");
+
+    if (emailValidator !== " ") {
+      console.log("error");
+      alert("please choose a correct email first");
+    }
+    else if (nameValidator !== " ") {
+      console.log("error");
+      alert("please choose a correct name first");
+    }
+    else if (passwordValidator !== " ") {
+      console.log("error");
+      alert("please choose a longer password first");
+    }
+    else if (mobileValidator !== " ") {
+      console.log("error");
+      alert("please choose a 10 digit phone number first");
+    }
+
+    console.log(email, mobile, password, uname);
+
+    // username,password,mobileno,email
+    let headers = new Headers();
+
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+    headers.append('Access-Control-Allow-Credentials', 'true');
+
+    headers.append('GET', 'POST', 'OPTIONS');
+
+    const res = await axios.post(API, qs.stringify({
+      username: uname,
+      email: email,
+      password: password,
+      mobileno: mobile
+    }), headers).then(
+      console.log("hehfkgck")
+    );
+    console.log(res);
+    if (res.data.state === 200) {
+      alert("Email already exists");
+    }
+    if (res.status === 200 && res.data.state !== 200) {
+      alert("User created");
+      navigate("/otp", { state: email });
+    }
+  }
   return (
     <div className="md:ml-40 md:mr-40">
-            <h1 className="pt-10 text-center text-4xl lg:text-6xl font-bold text-indigo-600">Regester</h1>
-        <section className="h-screen">
+            <h1 className="pt-10 text-center text-4xl lg:text-6xl font-bold text-indigo-600 mb-8">Regester</h1>
+        <section className="">
   <div className="container px-6 py-12 h-full">
     <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
       <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
           className="w-full"
-          alt="Phone image"
+          alt="Signup"
         />
       </div>
       <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
         <form>
-        <div className="mb-6">
+        <div className="h-20">
             <input
               type="text"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -96,7 +153,7 @@ export default function Signup() {
             />
             <p className="signuperrors">{nameValidator}</p>
           </div>
-          <div className="mb-6">
+          <div className="h-20">
             <input
               type="text"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -105,7 +162,7 @@ export default function Signup() {
             />
             <p className="signuperrors">{emailValidator}</p>
           </div>
-          <div className="mb-6">
+          <div className="h-20">
             <input
               type="number"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -116,7 +173,7 @@ export default function Signup() {
           </div>
 
 
-          <div className="mb-6">
+          <div className="h-20">
             <input
               type="password"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"

@@ -2,18 +2,18 @@ import { Fragment, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router,Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 const navigation = [
   { name: 'All Programs', href: '/', current: true },
   { name: 'Schedule GD', href: '/schedule', current: false },
-  { name: 'Blog', href: '/', current: false },
+  { name: 'Blog', href: '/blog', current: false },
   { name: 'Learn More', href: '/', current: false },
-  { name: 'Support', href: '/', current: false },
+  { name: 'Support', href: '/contact', current: false },
 ]
 const AllProgram = [{ name: "first", route: "/" }, { name: "second", route: "/" }, { name: "third", route: "/" }];
-const LearnMore = [{ name: "About", route: "/about" }, { name: "Career", route: "/" }, { name: "Contact", route: "/" }];
+const LearnMore = [{ name: "About", route: "/about" }, { name: "Career", route: "/" }, { name: "Contact", route: "/contact" }];
 function classNames(...classes) {
 
   return classes.filter(Boolean).join(' ')
@@ -43,15 +43,15 @@ const AllPrM = function({props,AllProgram}){
         {AllProgram.map((item, index) => {
           return (<Menu.Item key = {index}>
             {({ active }) => (
-              <a
-                href={item.route}
+              <Link
+                to={item.route}
                 className={classNames(
                   active ? 'bg-gray-800 text-gray-100' : 'text-gray-800',
                   'flex px-24 py-2 text-sm '
                 )}
               >
                 {item.name}
-              </a>
+              </Link>
             )}
           </Menu.Item>)
         })}
@@ -86,15 +86,15 @@ const AllPr = function({props,AllProgram}){
         {AllProgram.map((item, index) => {
           return (<Menu.Item key = {index}>
             {({ active }) => (
-              <a
-                href={item.route}
+              <Link
+                to={item.route}
                 className={classNames(
                   active ? 'bg-gray-800 text-gray-100' : 'text-gray-800',
                   'flex px-4 py-2 text-sm'
                 )}
               >
                 {item.name}
-              </a>
+              </Link>
             )}
           </Menu.Item>)
         })}
@@ -126,16 +126,19 @@ export default function Header() {
               </div>
               <div className="flex-1 flex items-center justify-center md:items-stretch md:justify-between" >
                 <div className="flex-shrink-0 flex items-center">
+                  <Link to="/">
+
                   <img
                     className="block md:hidden h-8 w-auto ml-10"
                     src="professionbeat logo.png"
                     alt="Professionbeat"
-                  />
+                    />
                   <img
                     className="hidden md:block h-8 w-auto"
                     src="professionbeat logo.png"
                     alt="Professionbeat"
-                  />
+                    />
+                    </Link>
                 </div>
                 <div className="hidden md:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -143,9 +146,9 @@ export default function Header() {
                     {navigation.map((item) => (
                       item.name==="All Programs"? <AllPr props = {item} AllProgram = {AllProgram}/>:
                       item.name==="Learn More"? <AllPr props = {item} AllProgram = {LearnMore}/>:
-                      <a
+                      <Link
                         key={item.name}
-                        href={item.href}
+                        to={item.href}
                         className={classNames(
                           item.current ? 'bg-gray-900 text-white' : 'text-gray-800 hover:bg-gray-700 hover:text-white',
                           'px-3 py-2 rounded-md text-sm font-medium'
@@ -153,15 +156,18 @@ export default function Header() {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
                 {logidin ? <></> : <button type="button" className="text-white bg-gray-500 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-800 hidden md:block">
-                <a href="/signup">
+         
+
+                <Link to="/signup">
 
                 Login / SignUp
-                </a>
+                </Link>
+            
                   </button>}
                   {/* <Link to="/signup">Login / SignUp</Link> */}
               </div>

@@ -1,7 +1,12 @@
 import React,{useState} from 'react'
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+const API = "http://localhost:8000/login";
+const qs = require('qs');
 export default function Login() {
-    const [emailValidator, validate] = useState(null);
+  const navigate = useNavigate();
+  const [emailValidator, validate] = useState(null);
   const [email, setemail] = useState(null);
   const [password, setpassword] = useState(null);
   const setPassword = (e) => {
@@ -28,23 +33,58 @@ export default function Login() {
       }
     }
   }
+  const submitform = async (e) => {
+
+    console.log("clickee");
+    if (emailValidator !== " ") {
+      console.log("error");
+      alert("please choose a correct email first");
+    }
+    else {
+      let headers = new Headers();
+
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Accept', 'application/json');
+
+      headers.append('Access-Control-Allow-Origin', 'http://localhost:3000');
+      headers.append('Access-Control-Allow-Credentials', 'true');
+
+      headers.append('GET', 'POST', 'OPTIONS');
+      console.log(email, password);
+      const res = await axios.post(API, qs.stringify({
+
+        email: email,
+        password: password,
+
+      }), headers).then(
+        console.log("hehfkgck")
+      );
+      console.log(res);
+      alert(res.data.message);
+      if (res.status === 200 && res.data.message === "Correct credential") {
+
+        navigate("/", { replace: true });
+      }
+
+    }
+  }
   return (
     <div className="md:ml-40 md:mr-40 py-12">
-        <h1 className="pt-10 text-center text-4xl lg:text-6xl font-bold text-indigo-600">Login</h1>
-        <section className="h-screen">
+        <h1 className="md:pt-10 text-center text-4xl lg:text-6xl font-bold text-indigo-600 mb-8">Login</h1>
+        <section className="">
   <div className="container px-6  h-full">
     <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
       <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
         <img
           src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
           className="w-full"
-          alt="Phone image"
+          alt="login"
         />
       </div>
       <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
         <form>
         
-          <div className="mb-6">
+          <div className="h-20">
             <input
               type="text"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -55,7 +95,7 @@ export default function Login() {
           </div>
 
 
-          <div className="mb-6">
+          <div className="h-20">
             <input
               type="password"
               className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -85,10 +125,11 @@ export default function Login() {
 
       
           <button
-            type="submit"
+            type="button"
             className="inline-block px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
             data-mdb-ripple="true"
             data-mdb-ripple-color="light"
+            onClick={(e) => submitform(e)}
           >Login
               
        

@@ -1,0 +1,27 @@
+.recent-table{
+    padding-bottom:60px;
+    overflow-x:auto;
+}
+.tbl{
+    width:100%;
+    border-collapse: collapse;
+    text-wrap: break-word;
+    
+}
+    .tbl,th,td{
+        border:1px solid;
+        text-align:center;
+    }
+    th,td{
+        font-size:14px;
+    }
+   .pre{
+       width:95%;
+       margin-left:5%;
+   }
+   .prerequesites{
+       margin-top:30px;
+   }
+   .marginbottom{
+       margin-bottom:50px;
+   }
